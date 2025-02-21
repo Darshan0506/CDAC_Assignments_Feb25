@@ -1,0 +1,838 @@
+Snippet 1:
+
+public class Main {
+	public void main(String[] args) {
+ 		System.out.println("Hello, World!");
+	}
+} 
+----------------------------------------------------------------------------------------------------
+Error1: Demo.java:1: error: class Main is public, should be declared in a file named Main.java
+public class Main {
+       ^
+1 error
+----------------------------------------------------------------------------------------------------
+Error: Main method not found in class Main, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------------------------------------------------------------------
+Corrected Code:
+
+public class Main {
+	public static void main(String[] args) {
+ 		System.out.println("Hello, World!");
+	}
+} 
+---------------x--------------------------x-----------------------------x---------------------------
+Snippet 2:
+
+public class Main {
+	static void main(String[] args) {
+		System.out.println("Hello, World!");
+	}
+}
+----------------------------------------------------------------------------------------------------
+Demo.java:1: error: class Main is public, should be declared in a file named Main.java
+public class Main {
+       ^
+1 error
+----------------------------------------------------------------------------------------------------
+Error: Main method not found in class Main, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------------------------------------------------------------------
+Corrected code:
+
+public class Main {
+	public static void main(String[] args) {
+		System.out.println("Hello, World!");
+	}
+}
+---------------x--------------------------x-----------------------------x---------------------------
+Snippet 3:
+public class Main {
+	public static int main(String[] args) {
+		System.out.println("Hello, World!");
+		return 0;
+	}
+}
+----------------------------------------------------------------------------------------------------
+Error: Main method not found in class Main, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+Here the return type of main method is defined as int which should be void;
+----------------------------------------------------------------------------------------------------
+Demo.java:2: error: invalid method declaration; return type required
+        public static main(String[] args) {
+                      ^
+1 error
+Here now the problem is we removed int but a method should have a return type; hence we write void
+----------------------------------------------------------------------------------------------------
+Demo.java:4: error: incompatible types: unexpected return value
+                return 0;
+                       ^
+1 error
+But now we have a return statement as retuen 0; but a void return type method should return nothing;
+Hence we can remove the return statement or modify the return 0; as return;
+----------------------------------------------------------------------------------------------------
+Corrected code:
+
+class Main {
+	public static void main(String[] args) {
+		System.out.println("Hello, World!");
+		return;
+	}
+}
+---------------x--------------------------x-----------------------------x---------------------------
+Snippet4: 
+public class Main {
+	public static void main() {
+		System.out.println("Hello, World!");
+	}
+} 
+----------------------------------------------------------------------------------------------------
+Error: Main method not found in class Main, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+here the string array(String [] args) is missing from the code. this string array is used to 
+store the inputs from user in a string array;
+----------------------------------------------------------------------------------------------------
+Corrected code:
+
+class Main {
+	public static void main(String [] args) {
+		System.out.println("Hello, World!");
+	}
+} 
+---------------x--------------------------x-----------------------------x---------------------------
+Snippet 5:
+public class Main {
+	public static void main(String[] args) {
+		System.out.println("Main method with String[] args");
+	}
+	public static void main(int[] args) {
+		System.out.println("Overloaded main method with int[] args");
+	}
+}
+Can you have multiple main methods? What do you observe?
+-----------------------------------------------------------------------------------------------------
+Error: Java allows method overloading for main, but the JVM only recognizes 
+public static void main(String[] args).
+-----------------------------------------------------------------------------------------------------
+Corrected code:
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Main method with String[] args");
+    }
+
+    public static void main(int[] args) {
+        System.out.println("Overloaded main method with int[] args");
+    }
+}
+-----------------------------------------------------------------------------------------------------
+Snippet 6:
+class Main {
+	public static void main(String[] args) {
+	int x = y + 10;
+	System.out.println(x);
+	}
+}
+-----------------------------------------------------------------------------------------------------
+Error: Variable y is not declared.
+Demo.java:3: error: cannot find symbol
+        int x = y + 10;
+                ^
+  symbol:   variable y
+  location: class Main
+1 error
+-----------------------------------------------------------------------------------------------------
+Corrected code:
+
+class Main {
+    public static void main(String[] args) {
+        int y = 5;
+        int x = y + 10;
+        System.out.println(x);
+    }
+}
+---------------x--------------------------x-----------------------------x---------------------------
+Snippet 7:
+
+class Main {
+	public static void main(String[] args) {
+		int x = "Hello";
+		System.out.println(x);
+	}
+}
+------------------------------------------------------------------------------------------------------
+Error:	int x = "Hello"; is incorrect.
+	Java is statically typed, so x cannot store a String.
+Demo.java:3: error: incompatible types: String cannot be converted to int
+                int x = "Hello";
+                        ^
+1 error
+------------------------------------------------------------------------------------------------------
+Corrected code:
+
+class Main {
+	public static void main(String[] args) {
+		String x = "Hello";
+		System.out.println(x);
+	}
+}
+---------------x--------------------------x-----------------------------x---------------------------
+Snippet 8:
+public class Main {
+	public static void main(String[] args) {
+		System.out.println("Hello, World!"
+	}
+}
+------------------------------------------------------------------------------------------------------
+Error: Missing closing parenthesis ')'is System.out.println() statement.
+
+Demo.java:3: error: ')' or ',' expected
+                System.out.println("Hello, World!"
+                                                  ^
+1 error
+------------------------------------------------------------------------------------------------------
+Corrected code:
+
+class Main {
+	public static void main(String[] args) {
+		System.out.println("Hello, World!");
+	}
+}
+---------------x--------------------------x-----------------------------x---------------------------
+Snippet 9:
+
+class Main {
+	public static void main(String[] args) {
+		int class = 10;
+		System.out.println(class);
+	}
+}
+------------------------------------------------------------------------------------------------------
+Error: Variable name can't be class as it is a reserved keyword;
+------------------------------------------------------------------------------------------------------
+Corrected code:
+
+class Main {
+	public static void main(String[] args) {
+		int num = 10;
+		System.out.println(num);
+	}
+}
+---------------x--------------------------x-----------------------------x---------------------------
+Snippet 10:
+
+class Main {
+	public void display() {
+		System.out.println("No parameters");
+	}
+	public void display(int num) {
+		System.out.println("With parameter: " + num);
+	}
+	public static void main(String[] args) {
+	display();
+	display(5);
+	}
+}
+-----------------------------------------------------------------------------------------------------
+Error: display() is not static, but it is called in a static context.
+Demo.java:9: error: non-static method display() cannot be referenced from a static context
+        display();
+        ^
+Demo.java:10: error: non-static method display(int) cannot be referenced from a static context
+        display(5);
+        ^
+2 errors
+----------------------------------------------------------------------------------------------------
+Corrected code:
+
+public class Main {
+    public void display() {
+        System.out.println("No parameters");
+    }
+
+    public void display(int num) {
+        System.out.println("With parameter: " + num);
+    }
+
+    public static void main(String[] args) {
+        Main obj = new Main();
+        obj.display();
+        obj.display(5);
+    }
+}
+---------------x--------------------------x-----------------------------x---------------------------
+Snippet 11:
+class Main {
+	public static void main(String[] args) {
+		int[] arr = {1, 2, 3};
+		System.out.println(arr[5]);
+	}
+}
+----------------------------------------------------------------------------------------------------
+Runtime Error: Array index out of bounds: arr[5] does not exist.
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 3
+        at Main.main(Demo.java:4)
+-------------------------------------------------------------------------------------------------------
+Corrected code:
+
+class Main {
+	public static void main(String[] args) {
+		int[] arr = {1, 2, 3};
+		System.out.println(arr[2]);
+	}
+}
+---------------x--------------------------x-----------------------------x---------------------------
+Snippet12:
+
+class Main {
+	public static void main(String[] args) {
+		while (true) {
+		System.out.println("Infinite Loop");
+		}
+	}
+}
+----------------------------------------------------------------------------------------------------
+Error: Goes in a infinite loop;
+----------------------------------------------------------------------------------------------------
+Corrected code:
+
+public class Main {
+    public static void main(String[] args) {
+        while (true) {
+            System.out.println("Infinite Loop");
+            break; // Fixes infinite loop
+        }
+    }
+}
+---------------x--------------------------x-----------------------------x---------------------------
+Snippet 13:
+
+class Main {
+	public static void main(String[] args) {
+	String str = null;
+	System.out.println(str.length());
+	}
+}
+----------------------------------------------------------------------------------------------------
+Error: NullPointerException because str is null.
+Exception in thread "main" java.lang.NullPointerException: Cannot invoke "String.length()" 
+because "<local1>" is null
+at Main.main(Demo.java:4)
+----------------------------------------------------------------------------------------------------
+Corrected code:
+
+public class Main {
+    public static void main(String[] args) {
+        String str = "Hello";
+        System.out.println(str.length());
+    }
+}
+---------------x--------------------------x-----------------------------x---------------------------
+Snippet 14:
+
+ class Main { 
+    public static void main(String[] args) { 
+        double num = "Hello"; 
+        System.out.println(num); 
+    } 
+} 
+----------------------------------------------------------------------------------------------------
+Problem13.java:3: error: incompatible types: String cannot be converted to double
+        double num = "Hello";
+                     ^
+1 error
+error: compilation failed
+
+
+----------------------------------------------------------------------------------------------------
+
+Corrected code 
+
+ class main {
+    public static void main(String[] args) {
+        double num = 10.5; 
+        System.out.println(num);
+    }
+}
+
+---------------x--------------------------x-----------------------------x---------------------------
+Snippet 15 
+
+   class Main { 
+    public static void main(String[] args) { 
+        int num1 = 10; 
+        double num2 = 5.5; 
+        int result = num1 + num2; 
+        System.out.println(result); 
+    } 
+} 
+----------------------------------------------------------------------------
+
+Error - main.java:5: error: incompatible types: possible lossy conversion from double to int
+        int result = num1 + num2;
+                          ^
+1 error
+error: compilation failed
+
+-------------------------------------------------------------------------------
+Corrected Code - 
+
+class Main {
+    public static void main(String[] args) {
+        double num1 = 5.5;
+        double num2 = 3.2;
+        
+        int result = (int) (num1 + num2);  
+        System.out.println("Result: " + result);
+    }
+}
+
+---------------x--------------------------x-----------------------------x---------------------------
+Snippet 16 
+
+   class Main { 
+    public static void main(String[] args) { 
+        int num = 10; 
+        double result = num / 4; 
+        System.out.println(result); 
+    } 
+}
+--------------------------------------------------------------------------------
+
+Error - The code will run successfully but producing and unexpected output due to integer division. 
+1) num is an int (10), and 4 is also treated as an int.
+2) Since both operands are integers, Java performs integer division, which discards the decimal part.
+3) 10 / 4 in integer division results in 2 (not 2.5).
+--------------------------------------------------------------------------------
+
+Corrected Code 
+    class Main {  
+    public static void main(String[] args) {  
+        int num = 10;  
+        double result = num / 4.0;  
+        System.out.println(result);  
+    }  
+}
+---------------x--------------------------x-----------------------------x---------------------------
+
+Snippet 17 
+
+  class Main { 
+    public static void main(String[] args) { 
+        int a = 10; 
+        int b = 5; 
+        int result = a ** b; 
+        System.out.println(result); 
+    } 
+} 
+
+------------------------------------------------------------------------------------
+
+Error - main.java:5: error: illegal start of expression
+        int result = a ** b;
+                        ^
+1 error
+error: compilation failed
+
+------------------------------------------------------------------------------------
+Corrected Code -
+
+  class Main {
+    public static void main(String[] args) {
+        int a = 2;
+        int b = 3;
+        
+        double result = Math.pow(a, b); // Correct way to compute a^b
+        System.out.println("Result: " + result);
+    }
+}
+---------------x--------------------------x-----------------------------x---------------------------
+
+Snippet 18 - 
+
+   class Main { 
+    public static void main(String[] args) { 
+        int a = 10; 
+        int b = 5; 
+        int result = a + b * 2; 
+        System.out.println(result); 
+    } 
+} 
+
+-------------------------------------------------------------------------------------
+
+Error - Code is already correct in terms of syntax, but if you're asking about potential logical issues, 
+it follows operator precedence rules in Java.
+
+---------------------------------------------------------------------------------------
+
+Corrected Code - 
+
+    class Main { 
+    public static void main(String[] args) { 
+        int a = 10; 
+        int b = 5; 
+        int result = (a + b) * 2; 
+        System.out.println(result); 
+    } 
+}
+---------------x--------------------------x-----------------------------x---------------------------
+
+Snippet 19 
+
+class Main { 
+    public static void main(String[] args) { 
+        int a = 10; 
+        int b = 0; 
+        int result = a / b; 
+        System.out.println(result); 
+    } 
+}
+
+------------------------------------------------------------------------------------------
+
+Error - Exception in thread "main" java.lang.ArithmeticException: / by zero
+        at Main.main(main.java:5)
+The code contains a division by zero error, which will cause a runtime exception in java.
+
+------------------------------------------------------------------------------------------
+
+Corrected code -
+
+class Main { 
+    public static void main(String[] args) { 
+        int a = 10; 
+        int b = 0; 
+        
+        if (b != 0) {  
+            int result = a / b;  
+            System.out.println("Result: " + result);  
+        } else {  
+            System.out.println("Error: Division by zero is not allowed!");  
+        }  
+    } 
+}
+---------------x--------------------------x-----------------------------x---------------------------
+
+Snippet 20 
+
+class Main { 
+    public static void main(String[] args) { 
+        System.out.println("Hello, World") 
+    } 
+}
+-------------------------------------------------------------------------------------------
+
+Error - main.java:3: error: ';' expected
+        System.out.println("Hello, World")
+
+The code is missing a semicolon (;) at the end of the System.out.println("Hello, World") statement.
+
+---------------------------------------------------------------------------------------------
+
+Corrected Code - 
+
+class Main { 
+    public static void main(String[] args) { 
+        System.out.println("Hello, World"); 
+    } 
+}
+---------------x--------------------------x-----------------------------x---------------------------
+
+Snippet 21 
+
+class Main { 
+    public static void main(String[] args) { 
+        System.out.println("Hello, World!"); 
+    // Missing closing brace here 
+} 
+
+------------------------------------------------------------------------------------------------
+Error - 
+main.java:5: error: reached end of file while parsing
+}
+ ^
+1 error
+error: compilation failed
+
+code is missing a closing brace (}) for the main method and the Main class.
+
+-------------------------------------------------------------------------------------------------
+
+Corrected Code - 
+
+class main { 
+    public static void main(String[] args) { 
+        System.out.println("Hello, World!");  
+    } 
+}
+
+---------------x--------------------------x-----------------------------x---------------------------
+Snippet 22 
+
+ class main { 
+    public static void main(String[] args) { 
+        static void displayMessage() { 
+            System.out.println("Message"); 
+        } 
+    } 
+}
+
+---------------------------------------------------------------------------------------------------
+Error - main.java:3: error: illegal start of expression
+        static void displayMessage() {
+        ^
+main.java:7: error: class, interface, or enum expected
+}
+^
+2 errors
+error: compilation failed
+
+The code likely has a misplaced static keyword. In Java, methods must be declared inside a class, 
+but if static void displayMessage() appears outside the class or inside another method, it will cause a syntax error.
+------------------------------------------------------------------------------------------------------
+
+Corrected Code - 
+
+ class Main {  
+    public static void main(String[] args) {  
+        System.out.println("Hello, World!");  
+        displayMessage();
+    }  
+    static void displayMessage() 
+{  
+        System.out.println("Welcome to Java!");  
+    }  
+}
+
+---------------x--------------------------x-----------------------------x---------------------------
+Snipper 23
+
+ class main { 
+    public static void main(String[] args) { 
+        int value = 2; 
+        switch(value) { 
+            case 1: 
+                System.out.println("Value is 1"); 
+            case 2: 
+                System.out.println("Value is 2"); 
+            case 3: 
+                System.out.println("Value is 3"); 
+            default: 
+                System.out.println("Default case"); 
+        } 
+    } 
+} 
+
+--------------------------------------------------------------------------------------------------------
+Error - The code compiles and runs, but it has fall-through behavior because it is missing break statements inside the switch cases.
+This happens because, in Java, switch cases fall through unless you explicitly use a break statement
+
+1) value = 2, so execution starts at case 2.
+2) Since there is no break, execution continues to case 3, printing "Value is 3".
+3) Again, since there is no break, execution falls through to the default case, printing "Default case".
+
+--------------------------------------------------------------------------------------------------------
+
+Corrected Code - 
+
+ class main { 
+    public static void main(String[] args) { 
+        int value = 2; 
+        switch(value) { 
+            case 1: 
+                System.out.println("Value is 1"); 
+                break; 
+            case 2: 
+                System.out.println("Value is 2"); 
+                break; 
+            case 3: 
+                System.out.println("Value is 3"); 
+                break; 
+            default: 
+                System.out.println("Default case"); 
+        } 
+    } 
+}
+---------------x--------------------------x-----------------------------x---------------------------
+Snippet 24
+
+    class main {
+    public static void main(String[] args) { 
+        int level = 1; 
+        switch(level) { 
+            case 1: 
+                System.out.println("Level 1"); 
+            case 2: 
+                System.out.println("Level 2"); 
+            case 3: 
+                System.out.println("Level 3"); 
+            default: 
+                System.out.println("Unknown level"); 
+        } 
+    } 
+}
+--------------------------------------------------------------------------------------------------------------
+Error - The code compiles successfully, but it exhibits fall-through
+behavior in the switch statement due to missing break statements.
+he switch statement lacks break statements, causing fall-through behavior. 
+This means once a matching case is found, all subsequent cases execute until the end of the switch block.
+
+Execution When level = 1
+
+switch(level) { 
+    case 1: 
+        System.out.println("Level 1");  //  Executes because level = 1
+    case 2: 
+        System.out.println("Level 2");  //  Falls through to here
+    case 3: 
+        System.out.println("Level 3");  //  Falls through to here
+    default: 
+        System.out.println("Unknown level");  // Falls through to here
+}
+
+1) level = 1, so execution starts at case 1.
+2) Since there's no break, execution continues to case 2, case 3, and default.
+3) All remaining statements execute, even though they don’t match level = 1.
+
+--------------------------------------------------------------------------------------------------------------
+Corrected Code - 
+
+class main { 
+    public static void main(String[] args) { 
+        int level = 1; 
+switch(level) { 
+    case 1: 
+        System.out.println("Level 1"); 
+        break;  // 
+    case 2: 
+        System.out.println("Level 2"); 
+        break;  // 
+    case 3: 
+        System.out.println("Level 3"); 
+        break;  
+    default: 
+        System.out.println("Unknown level"); 
+}
+---------------x--------------------------x-----------------------------x---------------------------
+
+Snippet 25 
+
+class Switch { 
+    public static void main(String[] args) { 
+        double score = 85.0; 
+        switch(score) { 
+            case 100: 
+                System.out.println("Perfect score!"); 
+                break; 
+            case 85: 
+                System.out.println("Great job!"); 
+                break; 
+            default: 
+                System.out.println("Keep trying!"); 
+        } 
+    } 
+}
+-----------------------------------------------------------------------------------------------------------------
+Error - 
+
+main.java:4: error: incompatible types: possible lossy conversion from double to int
+        switch(score) {
+              ^
+1 error
+error: compilation failed
+The code will not compile because Java does not allow switch statements with double values.
+
+error: incompatible types: possible lossy conversion from double to int
+        switch(score) { 
+               ^
+This error occurs because Java's switch statement only supports specific types.
+
+----------------------------------------------------------------------------------------------------------------
+
+Corrected Code - 
+
+class Switch { 
+    public static void main(String[] args) { 
+        double score = 85.0; 
+        
+        if (score == 100.0) { 
+            System.out.println("Perfect score!"); 
+        } else if (score == 85.0) { 
+            System.out.println("Great job!"); 
+        } else { 
+            System.out.println("Keep trying!"); 
+        } 
+    } 
+}
+
+This can also be done by converting double to int
+
+class Switch { 
+    public static void main(String[] args) { 
+        int score = (int) 85.0;  // 
+        switch(score) { 
+            case 100: 
+                System.out.println("Perfect score!"); 
+                break; 
+            case 85: 
+                System.out.println("Great job!"); 
+                break; 
+            default: 
+                System.out.println("Keep trying!"); 
+        } 
+    } 
+}
+---------------------------------------------------------------------------------------------------------------------
+Snippet 26 
+
+class Switch { 
+    public static void main(String[] args) { 
+        int number = 5; 
+        switch(number) { 
+            case 5: 
+                System.out.println("Number is 5"); 
+ 
+ 
+                break; 
+            case 5: 
+                System.out.println("This is another case 5"); 
+                break; 
+            default: 
+                System.out.println("This is the default case"); 
+        } 
+    } 
+} 
+-----------------------------------------------------------------------------------------------------------------------
+
+Error - code does not compile because there are duplicate case labels in the switch statement.
+main.java:10: error: duplicate case label
+            case 5:
+            ^
+1 error
+error: compilation failed
+
+Java does not allow duplicate case labels because each case must be unique within a switch block.
+If there are two identical case labels, the compiler cannot determine which one to execute,
+leading to a compilation error.
+-------------------------------------------------------------------------------------------------------------------
+
+class Switch { 
+    public static void main(String[] args) { 
+        int number = 5; 
+        switch(number) { 
+            case 5: 
+                System.out.println("Number is 5"); 
+                break; 
+            default: 
+                System.out.println("This is the default case"); 
+        } 
+    } 
+}
+
+
+
