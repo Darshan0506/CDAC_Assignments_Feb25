@@ -41,5 +41,6 @@ public class Question_5 {
         System.out.println("Student has failed in " + failedSubjects + " subjects");
         break;
     }
+    sc.close();
   }
 }
