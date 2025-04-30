@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+}
+#main {
+  padding: 0px 90px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding-top: 170px;
+  align-items: flex-end;
+  gap: 100px;
+}
+#left {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  height: 100%;
+  /* background-color: aqua; */
+}
+#left-top {
+  width: 100%;
+  height: 85%;
+  /* background-color: red; */
+}
+#left-top h2 {
+  font-size: 8vw;
+  font-weight: 400;
+  line-height: 100px;
+}
+#left-bottom {
+  width: 100%;
+  height: 50%;
+  align-items: end;
+  /* background-color: yellow; */
+}
+#colors {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 12px;
+  border: black solid 1px;
+  border-radius: 50px;
+  margin-bottom: 30px;
+}
+#colors h2 {
+  font-size: 15px;
+  font-weight: 400;
+  color: black;
+  margin-right: 15px;
+}
+#c1 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: #2c2d32;
+  margin: 2px;
+}
+#c2 {
+  width: 20px;
+  height: 20px;
+  margin-left: 2px;
+  border-radius: 50px;
+  background-color: #ce9d8c;
+}
+#left-bottom h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+#left-bottom p {
+  width: 50%;
+  font-size: 12px;
+}
+
+#right {
+  position: relative;
+  width: 30%;
+  height: 90%;
+  /* background-color: blue; */
+}
+#right-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+#right-top h5 {
+  font-weight: 500;
+}
+#right-top h5 i {
+  color: goldenrod;
+  font-size: 11px;
+  font-weight: 500;
+}
+#right img {
+  object-fit: cover;
+  width: 100%;
+  height: 96%;
+}
+#atb-tag{
+  display: flex;
+  border-radius: 75px;
+  position: absolute;
+  background-color: #bbbbbb;
+  height: 125px;
+  width: 125px;
+  top:50%;
+  right:17.5%;
+  align-items: center;
+  justify-content: center;
+}
+#atb-tag h4{
+  font-weight:500;
+  font-size: 15px;
+}
+#rotated{
+  position: absolute;
+  transform-origin: 0 0;
+  rotate: -90deg;
+  top:95%;
+  left:49%
+}
+#rotated h4{
+  font-weight: 700;
+  font-size: 22px;
+} 
