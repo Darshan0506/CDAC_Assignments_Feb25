@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;;
+  font-family: "Roboto", sans-serif;
 }
 html,
 body {
@@ -15,6 +15,7 @@ body {
   height: 100%;
   background-color: white;
 }
+
 nav {
   display: flex;
   justify-content: flex-end;
@@ -22,29 +23,31 @@ nav {
   width: 100%;
   height: 100px;
   /* background-color: red; */
-  gap: 20px;
+  gap: 45px;
   padding: 0px 30px;
 }
 nav h4 {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
 }
 nav i {
   background-color: black;
   color: white;
+  font-size: 15px;
+  font-weight: 500;
   padding: 10px;
   border-radius: 50%;
-  font-weight: 100;
 }
+
 #center {
   width: 100%;
   /* background-color: green; */
   padding: 40px 80px;
 }
 #center h1 {
-  font-size: 80px;
+  font-size: 5.2vw;
   font-weight: 200;
-  line-height: 85px;
+  line-height: 6vw;
 }
 
 #center-in {
@@ -56,8 +59,8 @@ nav i {
   justify-content: space-between;
 }
 #center-in p {
-  font-size: 22px;
-  line-height: 32px;
+  font-size: 1.5vw;
+  line-height: 2.1vw;
 }
 #right {
   width: 20%;
@@ -91,4 +94,85 @@ nav i {
   background-position: 0 10%;
   width: 100%;
   height: 50%;
+}
+
+@media (max-width: 600px) {
+  nav {
+    height: 60px;
+    gap: 20px;
+    padding: 0px 20px;
+  }
+
+  nav h4 {
+    display: none;
+  }
+
+  nav i {
+    font-size: 15px;
+    background-color: black;
+    color: white;
+    padding: 7px;
+    border-radius: 50%;
+    font-weight: 100;
+  }
+
+  #center {
+    width: 100%;
+    /* background-color: green; */
+    padding: 15px 20px;
+  }
+  #center h1 {
+    font-size: 10vw;
+    line-height: 10.8vw;
+  }
+
+  #center-in {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 100%;
+    margin-top: 20px;
+    /* gap: px; */
+    /* background-color: yellow; */
+    justify-content: space-between;
+  }
+  #center-in p {
+    font-size: 2.8vw;
+    line-height: 3.8vw;
+  }
+  #right {
+    width: 100%;
+  }
+  .elem {
+    display: flex;
+    /* background-color: wheat; */
+    justify-items: space;
+    padding: 10px 0;
+    border-top: solid black 1px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .elem a {
+    text-decoration: none;
+    color: rgb(61, 61, 61);
+    font-size: 13px;
+    font-weight: 300;
+  }
+  .elem i {
+    color: rgb(61, 61, 61);
+    font-size: 13px;
+    font-weight: 100;
+    opacity: 1;
+  }
+  .elem:hover i {
+    opacity: 1;
+  }
+
+  #bot {
+    background-image: url(https://images.unsplash.com/photo-1613876214872-a73df2a1b8bc?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: 50% 10%;
+    width: 100%;
+    height: 36.6%;
+  }
 }

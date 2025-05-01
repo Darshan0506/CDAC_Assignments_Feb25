@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'FuturaLT';
+  src: url('Assets/FONT_futura-lt-paneuropean/FuturaLTPaneuropeanBook.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturaLT';
+  src: url('Assets/FONT_futura-lt-paneuropean/FuturaLTPaneuropeanBookItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'FuturaLT';
+  src: url('Assets/FONT_futura-lt-paneuropean/FuturaLTPaneuropeanLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturaLT';
+  src: url('Assets/FONT_futura-lt-paneuropean/FuturaLTPaneuropeanLightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'FuturaLT';
+  src: url('Assets/FONT_futura-lt-paneuropean/FuturaLTPaneuropeanMedium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturaLT';
+  src: url('Assets/FONT_futura-lt-paneuropean/FuturaLTPaneuropeanMediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'FuturaLT';
+  src: url('Assets/FONT_futura-lt-paneuropean/FuturaLTPaneuropeanBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturaLT';
+  src: url('Assets/FONT_futura-lt-paneuropean/FuturaLTPaneuropeanBoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'FuturaLT';
+  src: url('Assets/FONT_futura-lt-paneuropean/FuturaLTPaneuropeanExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturaLT';
+  src: url('Assets/FONT_futura-lt-paneuropean/FuturaLTPaneuropeanExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'FuturaLT';
+  src: url('Assets/FONT_futura-lt-paneuropean/FuturaLTPaneuropeanHeavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturaLT';
+  src: url('Assets/FONT_futura-lt-paneuropean/FuturaLTPaneuropeanHeavyItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
